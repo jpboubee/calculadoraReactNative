@@ -12,12 +12,16 @@ const App = () => {
   const [operador, setOperador] = useState();
   const [numero2, setNumero2] = useState();
   const [result, setResult] = useState();
+  const [ponto, setPonto] = useState(true);
 
   const digito = novoNum => {
-    if (novoNum === '0' && numero === '0') {
+    if (novoNum === '0' && numero === '0' || ponto === false && novoNum ==='.') {
     } else if (numero != '0') {
       setNumero(numero + novoNum);
-    } else {
+    }else if(ponto === true && novoNum ==='.'){
+         setNumero(numero+novoNum);
+         setPonto(false);
+    }else {
       setNumero(novoNum);
     }
   };
@@ -26,12 +30,14 @@ const App = () => {
     setOperador(null);
     setNumero2(null);
     setResult(null);
+    setPonto(true);
   };
 
   const operacao = (op) => {
       setNumero2(numero);
       setOperador(op);
       setNumero(0);  
+      setPonto(true);
   }
 
   const resultado = () => {
