@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 const App = () => {
@@ -57,9 +58,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cabecalho}>
-        <Text style={styles.numero}>{numero2}</Text>
-        <Text style={styles.numero}>{operador}</Text>
-        <Text style={styles.numero}>{numero}</Text>
+        <Text style={styles.numero}>{numero2}{operador}{numero}</Text>
         <Text style={styles.numero}>{result}</Text>
       </View>
       <View style={styles.botoes}>
@@ -75,14 +74,14 @@ const App = () => {
         <TouchableOpacity style={styles.botao} onPress={() => operacao('+')}>
            <Text style={styles.botaoTexto}>  +</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('1')}>
-           <Text style={styles.botaoTexto}>  1</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('7')}>
+           <Text style={styles.botaoTexto}>  7</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('2')}>
-           <Text style={styles.botaoTexto}>  2</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('8')}>
+           <Text style={styles.botaoTexto}>  8</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('3')}>
-           <Text style={styles.botaoTexto}>  3</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('9')}>
+           <Text style={styles.botaoTexto}>  9</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.botao} onPress={() => operacao('-')}>
            <Text style={styles.botaoTexto}>  -</Text>
@@ -99,17 +98,17 @@ const App = () => {
         <TouchableOpacity style={styles.botao} onPress={() => operacao('*')}>
            <Text style={styles.botaoTexto}>  *</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('7')}>
-           <Text style={styles.botaoTexto}>  7</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('1')}>
+           <Text style={styles.botaoTexto}>  1</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('8')}>
-           <Text style={styles.botaoTexto}>  8</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('2')}>
+           <Text style={styles.botaoTexto}>  2</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao} onPress={() => digito('9')}>
-           <Text style={styles.botaoTexto}>  9</Text>
+        <TouchableOpacity style={styles.botao} onPress={() => digito('3')}>
+           <Text style={styles.botaoTexto}>  3</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.botao} onPress={() => operacao('/')}>
-           <Text style={styles.botaoTexto}>  /</Text>
+         <Text style={styles.botaoTexto}>  /</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.botao} onPress={() => limpar()}>
            <Text style={styles.botaoTexto}></Text>
@@ -132,8 +131,11 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor:'#18191A'
+   flex: 1,
+   padding: 10,
+   justifyContent: 'center',
+   backgroundColor: 'rgba(0,0,0,0.6)',
+   alignItems: 'flex-end',
   },
   botao: {
     width: '25%',
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
     fontSize:50,
   },
   cabecalho: {
-    height: '46%',
+    height: '40%',
     justifyContent: 'flex-end',
   },
   numero: {
@@ -166,9 +168,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     color: '#ffffff',
   },
-  botaoNulo:{
-
-  }
+  
 });
 
 export default App;
