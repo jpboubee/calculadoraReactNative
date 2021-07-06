@@ -43,7 +43,7 @@ const App = () => {
   const operacao = op => {
     setNumero2(numero);
     setOperador(op);
-    setNumero(0);
+    setNumero('');
     setPonto(true);
   };
 
@@ -64,9 +64,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cabecalho}>
-        <Text style={styles.numero}>{numero2}</Text>
-        <Text style={styles.numero}>{operador}</Text>
-        <Text style={styles.numero}>{numero}</Text>
+        <Text style={styles.numero}>{numero2}{operador}{numero}</Text>
         <Text style={styles.numero}>{result}</Text>
       </View>
       <View style={styles.botoes}>
@@ -131,6 +129,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#18191A',
+   
+
   },
   botao: {
    
@@ -168,7 +168,7 @@ botaoC: {
     flexWrap: 'wrap',
     textAlign: 'center',
     fontSize: 30,
-    height: '80%',
+    
   },
   botaoTexto: {
     textAlign: 'center',
@@ -179,6 +179,7 @@ botaoC: {
   cabecalho: {
 
     justifyContent: 'flex-end',
+    height:"22%"
   },
   numero: {
     paddingRight: '5%',
@@ -186,7 +187,7 @@ botaoC: {
     fontSize: 50,
     color: '#ffffff',
   },
-  botaoNulo: {},
+ 
 });
 
 export default App;
